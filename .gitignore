@@ -1,0 +1,47 @@
+# dependencies / build
+node_modules
+/.next/
+/out/
+/build
+.next
+*.tsbuildinfo
+next-env.d.ts
+
+# logs
+*.log
+dev.log
+dev.out.log
+server.log
+
+# local env & secrets
+.env
+.env.*
+!.env.example
+
+# workspace artifacts (not part of the site)
+/download
+/upload
+/scripts
+/tests
+/tool-results
+/examples
+/mini-services
+/skills
+/.zscripts
+/.claude
+/.z-ai-config
+/worklog.md
+/db
+/*.png
+/*.jpg
+/page_*.html
+/research_*
+/prompt
+/local-*
+/test
+
+# misc
+.DS_Store
+*.pem
+.vercel
+.caddy*
