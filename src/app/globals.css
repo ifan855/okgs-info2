@@ -455,6 +455,17 @@ body {
 [data-mode="normal"] .film-scrim-tight {
   background: linear-gradient(180deg, rgba(18, 32, 25, 0.14), transparent 35%, rgba(18, 32, 25, 0.55) 100%);
 }
+
+/* ---- text over video — stays light in BOTH editions.
+   The normal-mode theme remap turns .text-white* into dark ink for the
+   paper page; these classes sit outside that remap so the montage
+   heroes keep their contrast over real footage. ---- */
+.over-video { color: #ffffff; }
+.over-video-85 { color: rgba(255, 255, 255, 0.88); }
+.over-video-75 { color: rgba(255, 255, 255, 0.78); }
+.over-video-60 { color: rgba(255, 255, 255, 0.62); }
+.over-video-55 { color: rgba(255, 255, 255, 0.58); }
+.over-video-gold { color: #f0b429; }
 [data-mode="normal"] .film-card { border-color: rgba(27, 45, 35, 0.14); }
 [data-mode="normal"] .film-card:hover { border-color: rgba(30, 122, 76, 0.5); }
 [data-mode="normal"] .film-card .bg-void\/85 { background-color: rgba(255, 255, 255, 0.92); }

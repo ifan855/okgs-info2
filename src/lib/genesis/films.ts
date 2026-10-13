@@ -2,16 +2,22 @@ import type { Film } from "@/lib/types";
 
 /* ============================================================
    THE FILM DESK — real school footage, cut for the web.
-   Eight films live in /media/film (H.264 mp4, faststart):
-   · odyssey-montage  → the fair hero's quick-cut opening loop
-   · gate-morning     → the normal-mode hero's morning loop
-   · film-*           → the watchable films below
+   Ten films live in /media/film (H.264 mp4, faststart):
+   · odyssey-montage      → the FAIR hero's quick-cut opening loop
+                            (billboard → projects → plaques → the
+                            principal's speech → flash mob → the roar)
+   · school-days-montage  → the NORMAL hero's quick-cut loop
+                            (gate → handwriting → art → craft →
+                            puzzle → scouts → courtyard → the field)
+   · gate-morning         → raw morning-gate loop (montage source)
+   · film-*               → the watchable films below
    Every frame is the school's own footage — no stock anywhere.
    ============================================================ */
 
 export const HERO_MONTAGE = "/media/film/odyssey-montage.mp4";
 export const HERO_MONTAGE_POSTER = "/media/film/poster-odyssey.jpg";
-export const GATE_LOOP = "/media/film/gate-morning.mp4";
+export const SCHOOL_MONTAGE = "/media/film/school-days-montage.mp4";
+export const SCHOOL_MONTAGE_POSTER = "/media/film/poster-school-days.jpg";
 
 export const FILMS: Film[] = [
   {

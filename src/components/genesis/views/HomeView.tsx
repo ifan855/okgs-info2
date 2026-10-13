@@ -1,18 +1,19 @@
 "use client";
 
 /* HomeView — the front page of the OKGS site.
-   One address, two editions:
+   One address, two editions, each opening on its own montage:
 
    fair   → a cinematic, low-density title-card hero — the school's
-            own Odyssey footage cut into a quick-cut montage behind
-            the fair's full colon-combined name — then chapters that
-            let information density climb with every scroll: arenas,
-            the crew of five, the film desk, campus moments, the
-            journal, finale.
-   normal → a confident school landing page — welcome (with the
-            morning-gate film), snapshot, facilities, clubs, the
-            film desk, campus life — with the journal kept
-            deliberately quiet near the end.
+            own Odyssey footage cut into a quick-cut montage (fair
+            billboard, project tables, plaques, the principal's
+            speech, the flash mob, the roar) behind the fair's full
+            colon-combined name — then chapters that let information
+            density climb with every scroll: arenas, the crew of
+            five, the film desk, campus moments, the journal, finale.
+   normal → the same cinematic opening, cut from everyday school
+            life (gate → handwriting → art → craft → puzzle →
+            scouts → courtyard) behind one promise — then snapshot,
+            facilities, clubs, the film desk, campus life, journal.
 
    No stock space photography anywhere: every backdrop is real
    school footage or CSS light; every photo is real. */
@@ -24,7 +25,7 @@ import {
   ChevronDown, Phone, ExternalLink, LogIn, ImageOff, Clapperboard,
 } from "lucide-react";
 import { FAIR, ARENAS, CLUBS, STATS, SITE, FACILITIES } from "@/lib/genesis/data";
-import { HERO_MONTAGE, HERO_MONTAGE_POSTER, GATE_LOOP, filmsForEdition } from "@/lib/genesis/films";
+import { HERO_MONTAGE, HERO_MONTAGE_POSTER, SCHOOL_MONTAGE, SCHOOL_MONTAGE_POSTER, filmsForEdition } from "@/lib/genesis/films";
 import { useMode, fetchPosts, fetchGallery, formatDate } from "@/lib/press";
 import type { GalleryItem, Film, Post } from "@/lib/types";
 import { SplitText, Reveal, CutIn, StaggerGroup, StaggerItem, Counter, Magnetic, TiltCard, SectionHead, Anchor, StarDots } from "../FX";
@@ -272,87 +273,167 @@ function FairHero() {
 }
 
 /* ============================================================
-   SCHOOL HERO — the school itself, real photo, one promise
+   SCHOOL HERO — a school day in quick cuts. The normal edition
+   opens on its own montage (same treatment as the fair hero):
+   real campus footage behind one promise, scrim kept LOW so the
+   frames read solid, then density climbs with the scroll.
    ============================================================ */
 function SchoolHero() {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
+  const yBg = useTransform(scrollYProgress, [0, 1], [0, 140]);
+  const scaleBg = useTransform(scrollYProgress, [0, 1], [1, 1.12]);
+  const yTitle = useTransform(scrollYProgress, [0, 1], [0, 90]);
+  const fade = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+  const [allowMotion, setAllowMotion] = useState(true);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const raf = requestAnimationFrame(() => setAllowMotion(!mq.matches));
+    const on = () => setAllowMotion(!mq.matches);
+    mq.addEventListener("change", on);
+    return () => {
+      cancelAnimationFrame(raf);
+      mq.removeEventListener("change", on);
+    };
+  }, []);
+
   return (
-    <section className="relative overflow-hidden grain">
-      <div aria-hidden className="aurora" />
+    <section ref={ref} className="relative flex min-h-[100svh] items-center overflow-hidden grain">
+      {/* the school itself — a day in quick cuts, footage baked in */}
+      <motion.div aria-hidden style={{ y: yBg, scale: scaleBg }} className="absolute inset-0">
+        {allowMotion ? (
+          <video
+            className="hero-video"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            poster={SCHOOL_MONTAGE_POSTER}
+            aria-hidden
+          >
+            <source src={SCHOOL_MONTAGE} type="video/mp4" />
+          </video>
+        ) : (
+          <img src={SCHOOL_MONTAGE_POSTER} alt="" className="hero-video" />
+        )}
+      </motion.div>
+      {/* low-transparency scrim, tinted for the normal edition */}
+      <div aria-hidden className="film-scrim absolute inset-0" />
 
-      <div className="relative mx-auto max-w-7xl px-5 pb-20 pt-32 md:px-10 md:pb-28 md:pt-44">
-        <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_1fr] lg:gap-16">
-          <div>
-            <Reveal y={14}>
-              <p className="font-bangla text-[15px] leading-relaxed text-gold-2 md:text-base" style={{ letterSpacing: "0.08em" }}>
-                {SITE.schoolBn}
-              </p>
-            </Reveal>
-            <h1 className="font-display mt-4 text-4xl font-bold leading-[1.06] tracking-tight text-ink md:text-6xl">
-              <SplitText text="Quality education" className="block" />
-              <SplitText text="for all — since 2003" delay={0.35} className="block" letterClassName="text-gold-gradient" />
-            </h1>
-            <Reveal delay={0.5}>
-              <p className="mt-6 max-w-xl text-[15px] leading-relaxed text-dim md:text-base">
-                From play group to class ten, {SITE.school} has taught the children of
-                Kalai with one promise written on its crest — {SITE.mottoBn}. Eleven
-                hundred students, eighty teachers, five clubs and a campus that stays
-                loud long after the last period.
-              </p>
-            </Reveal>
-            <Reveal delay={0.62}>
-              <div className="mt-9 flex flex-wrap items-center gap-4">
-                <Magnetic>
-                  <Anchor to="/contact" className="btn-gold">
-                    Admissions &amp; contact <ArrowRight className="h-4 w-4" aria-hidden />
-                  </Anchor>
-                </Magnetic>
-                <Magnetic>
-                  <Anchor to="/clubs" className="btn-ghost">
-                    Meet the clubs <ArrowUpRight className="h-4 w-4" aria-hidden />
-                  </Anchor>
-                </Magnetic>
-              </div>
-            </Reveal>
-            <Reveal delay={0.72}>
-              <p className="font-bangla mt-8 text-sm text-white/50">
-                {SITE.sinceBn}
-              </p>
-            </Reveal>
-          </div>
+      {/* the edit-cut seam where the hero hands the frame over */}
+      <motion.div
+        aria-hidden
+        initial={{ scaleX: 0, opacity: 0 }}
+        whileInView={{ scaleX: 1, opacity: [0, 1, 1, 0] }}
+        viewport={{ once: true, margin: "-5% 0px" }}
+        transition={{ duration: 0.9, times: [0, 0.25, 0.7, 1], ease: "easeOut" }}
+        className="cut-seam bottom-0 z-20 origin-left"
+      />
 
-          <Reveal delay={0.3}>
-            <div className="relative">
-              <div className={`rounded-[2rem] border border-white/10 p-3 shadow-[0_30px_80px_-40px_rgba(20,40,30,0.5)] ${"bg-white/5"}`}>
-                <div className="photo-morning relative overflow-hidden rounded-2xl">
-                  <video
-                    className="h-72 w-full object-cover md:h-[420px]"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="metadata"
-                    poster="/media/real/campus-1.jpg"
-                    aria-label="Morning assembly line at the school gate — from the school's own film"
-                  >
-                    <source src={GATE_LOOP} type="video/mp4" />
-                  </video>
-                </div>
-                <p className="mt-3 flex items-center justify-between px-1 text-[11px] text-white/50">
-                  <span>The morning gate — from the school's own film</span>
-                  <span className="font-mono2">EST. 2003</span>
-                </p>
-              </div>
-              <div className="glass absolute -bottom-6 -left-4 flex items-center gap-3 rounded-2xl px-4 py-3 md:-left-8">
-                <img src="/media/real/crest.jpg" alt="OKGS crest" className="h-11 w-11 rounded-full object-cover" />
-                <div>
-                  <p className="font-display text-sm font-semibold text-ink">{SITE.school}</p>
-                  <p className="text-[11px] text-white/50">{SITE.mottoEn}</p>
-                </div>
-              </div>
-            </div>
-          </Reveal>
+      <motion.div style={{ opacity: fade }} className="relative z-10 mx-auto w-full max-w-7xl px-5 pb-28 pt-32 md:px-10 md:pt-36">
+        {/* quiet furniture: crest, since, the school in Bangla */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.35 }}
+          className="flex flex-wrap items-center gap-3"
+        >
+          <span className="chip chip-solid">
+            <img src="/media/real/crest.jpg" alt="" className="h-4 w-4 rounded-full object-cover" />
+            Since 2003
+          </span>
+          <span className="chip chip-solid font-bangla hidden md:inline-flex" style={{ letterSpacing: "0.06em" }}>
+            {SITE.schoolBn}
+          </span>
+        </motion.div>
+
+        {/* one promise, over the school's own morning */}
+        <motion.div style={{ y: yTitle }} className="mt-8 md:mt-10">
+          <h1>
+            <span className="font-display block overflow-hidden">
+              <SplitText
+                text="Quality education"
+                delay={0.5}
+                stagger={0.05}
+                className="over-video block text-[11.5vw] font-bold leading-[1.02] tracking-[0.02em] sm:text-[8.5vw] lg:text-[6.2rem]"
+              />
+            </span>
+            <span className="mt-2 block overflow-hidden md:mt-3">
+              <SplitText
+                text="for all — since 2003"
+                delay={0.85}
+                stagger={0.04}
+                letterClassName="over-video-gold"
+                className="over-video block text-[11.5vw] font-bold leading-[1.02] tracking-[0.02em] sm:text-[8.5vw] lg:text-[6.2rem]"
+              />
+            </span>
+            <span className="mt-3 block overflow-hidden md:mt-4">
+              <motion.span
+                initial={{ opacity: 0, y: 24, filter: "blur(10px)" }}
+                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                transition={{ duration: 1, delay: 1.15 }}
+                className="font-editorial over-video-85 block text-[6.4vw] italic leading-snug sm:text-[4vw] lg:text-[2.5rem]"
+                style={{ textShadow: "0 2px 30px rgba(4,7,15,0.8)" }}
+              >
+                {SITE.mottoEn}
+                <span className="font-bangla over-video-55 mt-2 block text-[12px] font-normal not-italic tracking-wide md:text-sm" style={{ letterSpacing: "0.14em" }}>
+                  {SITE.mottoBn}
+                </span>
+              </motion.span>
+            </span>
+          </h1>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 22 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 1.5 }}
+          className="over-video-75 mt-9 max-w-xl text-[15px] leading-relaxed md:mt-10 md:text-base"
+          style={{ textShadow: "0 1px 16px rgba(4,7,15,0.9)" }}
+        >
+          From play group to class ten, {SITE.school} has taught the children of
+          Kalai with one promise written on its crest. Eleven hundred students,
+          eighty teachers, five clubs and a campus that stays loud long after
+          the last period.
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 1.65 }}
+          className="mt-8 flex flex-wrap items-center gap-4"
+        >
+          <Magnetic>
+            <Anchor to="/contact" className="btn-gold">
+              Admissions &amp; contact
+              <ArrowRight className="h-4 w-4" aria-hidden />
+            </Anchor>
+          </Magnetic>
+          <Magnetic>
+            <Anchor to="/clubs" className="btn-ghost !bg-void/60">
+              Meet the clubs
+              <ArrowUpRight className="h-4 w-4" aria-hidden />
+            </Anchor>
+          </Magnetic>
+        </motion.div>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 2.1, duration: 1 }}
+        className="absolute bottom-7 left-1/2 z-10 -translate-x-1/2"
+        aria-hidden
+      >
+        <div className="over-video-60 flex flex-col items-center gap-2">
+          <span className="font-mono2 text-[9px] uppercase tracking-[0.4em]">scroll</span>
+          <motion.span animate={{ y: [0, 7, 0] }} transition={{ repeat: Infinity, duration: 1.8 }}>
+            <ChevronDown className="h-4 w-4" />
+          </motion.span>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
