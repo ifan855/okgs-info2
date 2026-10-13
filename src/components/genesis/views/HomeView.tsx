@@ -6,7 +6,7 @@
    fair   → a cinematic, low-density title-card hero — the school's
             own Odyssey footage cut into a quick-cut montage (fair
             billboard, project tables, plaques, the principal's
-            speech, the flash mob, the roar) behind the fair's full
+            speech, the speakers, the roar) behind the fair's full
             colon-combined name — then chapters that let information
             density climb with every scroll: arenas, the crew of
             five, the film desk, campus moments, the journal, finale.

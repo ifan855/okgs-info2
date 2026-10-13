@@ -3,21 +3,27 @@ import type { Film } from "@/lib/types";
 /* ============================================================
    THE FILM DESK — real school footage, cut for the web.
    Hosted on Cloudinary (cloud tt7oyjd1) — never committed to git.
-   · odyssey-montage-v3    → the FAIR hero's quick-cut opening loop
-                             (billboard → projects → Ayman at the tables →
-                             the principal's speech → flash mob → Ayman → the roar)
-                             Re-cut? upload a -v4 public id and bump these consts.
-   · school-days-montage-v3 → the NORMAL hero's quick-cut loop
+   · odyssey-montage-v4    → the FAIR hero's quick-cut opening loop
+                             (billboard → projects → the guests at the
+                             stalls → prize plaques · dissolve · the
+                             principal's speech → the speakers → the roar)
+                             — no flash mob, no stage bits; the plaques
+                             hand over to the principal on a 16-frame
+                             dissolve and his 0:26 take is the full one.
+                             Re-cut? upload a -v5 public id and bump these consts.
+   · school-days-montage-v4 → the NORMAL hero's quick-cut loop
                              (gate → handwriting → art → craft →
-                             puzzle → scouts → courtyard → the field)
+                             puzzle → scouts → the flash mob, breathing
+                             on dissolves → the roar pushing in → a
+                             motion-matched dissolve into the drone)
    · film-*               → the watchable films below
    Every frame is the school's own footage — no stock anywhere.
    ============================================================ */
 
-export const HERO_MONTAGE = "https://res.cloudinary.com/tt7oyjd1/video/upload/okgs/film/odyssey-montage-v3.mp4";
-export const HERO_MONTAGE_POSTER = "https://res.cloudinary.com/tt7oyjd1/image/upload/okgs/film/poster-odyssey.jpg";
-export const SCHOOL_MONTAGE = "https://res.cloudinary.com/tt7oyjd1/video/upload/okgs/film/school-days-montage-v3.mp4";
-export const SCHOOL_MONTAGE_POSTER = "https://res.cloudinary.com/tt7oyjd1/image/upload/okgs/film/poster-school-days.jpg";
+export const HERO_MONTAGE = "https://res.cloudinary.com/tt7oyjd1/video/upload/okgs/film/odyssey-montage-v4.mp4";
+export const HERO_MONTAGE_POSTER = "https://res.cloudinary.com/tt7oyjd1/image/upload/okgs/film/poster-odyssey-v4.jpg";
+export const SCHOOL_MONTAGE = "https://res.cloudinary.com/tt7oyjd1/video/upload/okgs/film/school-days-montage-v4.mp4";
+export const SCHOOL_MONTAGE_POSTER = "https://res.cloudinary.com/tt7oyjd1/image/upload/okgs/film/poster-school-days-v4.jpg";
 
 export const FILMS: Film[] = [
   {

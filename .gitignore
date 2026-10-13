@@ -49,3 +49,6 @@ server.log
 *.pem
 .vercel
 .caddy*
+
+# media workbench — never commit media
+/media-work
