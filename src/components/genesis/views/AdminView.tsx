@@ -421,29 +421,29 @@ function PasswordCard() {
 
 /* ============================ gallery manager ============================ */
 const MEDIA_PRESETS = [
-  "/media/real/campus-1.jpg",
-  "/media/real/crest.jpg",
-  "/media/real/branding-okgs.png",
-  "/media/real/cover-alssm.jpg",
-  "/media/real/cover-alpcg.jpg",
-  "/media/real/cover-aypg.jpg",
-  "/media/real/photo-assembly-1.jpg",
-  "/media/real/photo-classroom-1.jpg",
-  "/media/real/photo-field-1.jpg",
-  "/media/real/photo-football-1.jpg",
-  "/media/real/photo-aypg-1.jpg",
+  "https://res.cloudinary.com/tt7oyjd1/image/upload/okgs/real/campus-1.jpg",
+  "https://res.cloudinary.com/tt7oyjd1/image/upload/okgs/real/crest.jpg",
+  "https://res.cloudinary.com/tt7oyjd1/image/upload/okgs/real/branding-okgs.png",
+  "https://res.cloudinary.com/tt7oyjd1/image/upload/okgs/real/cover-alssm.jpg",
+  "https://res.cloudinary.com/tt7oyjd1/image/upload/okgs/real/cover-alpcg.jpg",
+  "https://res.cloudinary.com/tt7oyjd1/image/upload/okgs/real/cover-aypg.jpg",
+  "https://res.cloudinary.com/tt7oyjd1/image/upload/okgs/real/photo-assembly-1.jpg",
+  "https://res.cloudinary.com/tt7oyjd1/image/upload/okgs/real/photo-classroom-1.jpg",
+  "https://res.cloudinary.com/tt7oyjd1/image/upload/okgs/real/photo-field-1.jpg",
+  "https://res.cloudinary.com/tt7oyjd1/image/upload/okgs/real/photo-football-1.jpg",
+  "https://res.cloudinary.com/tt7oyjd1/image/upload/okgs/real/photo-aypg-1.jpg",
 ];
 
 /* school films ship with the site — one click adds them as video items */
 const FILM_PRESETS = [
-  { src: "/media/film/film-odyssey.mp4", poster: "/media/film/poster-film-odyssey.jpg", title: "OKGS Odyssey — the 5th Science Fair", category: "Films" },
-  { src: "/media/film/film-scout.mp4", poster: "/media/film/poster-film-scout.jpg", title: "Scout display — 26 March", category: "Films" },
-  { src: "/media/film/film-flashmob.mp4", poster: "/media/film/poster-film-flashmob.jpg", title: "Flash mob — ART Odyssey stage", category: "Films" },
-  { src: "/media/film/film-greeting.mp4", poster: "/media/film/poster-film-greeting.jpg", title: "A simple greeting, a warm smile", category: "Films" },
-  { src: "/media/film/film-handwriting.mp4", poster: "/media/film/poster-film-handwriting.jpg", title: "The handwriting class", category: "Films" },
-  { src: "/media/film/film-craft.mp4", poster: "/media/film/poster-film-craft.jpg", title: "Making things with glue and paper", category: "Films" },
-  { src: "/media/film/film-art.mp4", poster: "/media/film/poster-film-art.jpg", title: "Wall painting — the art period", category: "Films" },
-  { src: "/media/film/film-puzzle.mp4", poster: "/media/film/poster-film-puzzle.jpg", title: "The puzzle hour", category: "Films" },
+  { src: "https://res.cloudinary.com/tt7oyjd1/video/upload/okgs/film/film-odyssey.mp4", poster: "https://res.cloudinary.com/tt7oyjd1/image/upload/okgs/film/poster-film-odyssey.jpg", title: "OKGS Odyssey — the 5th Science Fair", category: "Films" },
+  { src: "https://res.cloudinary.com/tt7oyjd1/video/upload/okgs/film/film-scout.mp4", poster: "https://res.cloudinary.com/tt7oyjd1/image/upload/okgs/film/poster-film-scout.jpg", title: "Scout display — 26 March", category: "Films" },
+  { src: "https://res.cloudinary.com/tt7oyjd1/video/upload/okgs/film/film-flashmob.mp4", poster: "https://res.cloudinary.com/tt7oyjd1/image/upload/okgs/film/poster-film-flashmob.jpg", title: "Flash mob — ART Odyssey stage", category: "Films" },
+  { src: "https://res.cloudinary.com/tt7oyjd1/video/upload/okgs/film/film-greeting.mp4", poster: "https://res.cloudinary.com/tt7oyjd1/image/upload/okgs/film/poster-film-greeting.jpg", title: "A simple greeting, a warm smile", category: "Films" },
+  { src: "https://res.cloudinary.com/tt7oyjd1/video/upload/okgs/film/film-handwriting.mp4", poster: "https://res.cloudinary.com/tt7oyjd1/image/upload/okgs/film/poster-film-handwriting.jpg", title: "The handwriting class", category: "Films" },
+  { src: "https://res.cloudinary.com/tt7oyjd1/video/upload/okgs/film/film-craft.mp4", poster: "https://res.cloudinary.com/tt7oyjd1/image/upload/okgs/film/poster-film-craft.jpg", title: "Making things with glue and paper", category: "Films" },
+  { src: "https://res.cloudinary.com/tt7oyjd1/video/upload/okgs/film/film-art.mp4", poster: "https://res.cloudinary.com/tt7oyjd1/image/upload/okgs/film/poster-film-art.jpg", title: "Wall painting — the art period", category: "Films" },
+  { src: "https://res.cloudinary.com/tt7oyjd1/video/upload/okgs/film/film-puzzle.mp4", poster: "https://res.cloudinary.com/tt7oyjd1/image/upload/okgs/film/poster-film-puzzle.jpg", title: "The puzzle hour", category: "Films" },
 ];
 
 function GalleryManager() {
@@ -574,7 +574,7 @@ function GalleryManager() {
         <p className="mt-1 text-[13px] text-white/50">
           {kind === "video"
             ? "Pick one of the school films below, or paste any mp4 URL with its poster image."
-            : "Pick a file already in /media/real/ or paste any image URL (e.g. a Facebook photo address)."}
+            : "Pick a school photo from the presets, or paste any image URL (e.g. a Facebook photo address)."}
         </p>
         {kind === "image" && (
           <div className="mt-4 flex flex-wrap gap-2">
@@ -610,13 +610,13 @@ function GalleryManager() {
         )}
         <div className="mt-4 grid gap-4 md:grid-cols-[1.4fr_1fr_1fr_auto]">
           <label className="block text-xs uppercase tracking-[0.18em] text-white/45">
-            {kind === "video" ? "Film path / URL" : "Image path / URL"}
-            <input value={src} onChange={(e) => setSrc(e.target.value)} className="field mt-1.5 font-mono2 !text-[13px] normal-case tracking-normal" placeholder={kind === "video" ? "/media/film/… or https://…mp4" : "/media/real/… or https://…"} />
+            {kind === "video" ? "Film URL" : "Image URL"}
+            <input value={src} onChange={(e) => setSrc(e.target.value)} className="field mt-1.5 font-mono2 !text-[13px] normal-case tracking-normal" placeholder="https://…mp4 or https://…jpg" />
           </label>
           {kind === "video" && (
             <label className="block text-xs uppercase tracking-[0.18em] text-white/45">
               Poster image
-              <input value={poster} onChange={(e) => setPoster(e.target.value)} className="field mt-1.5 font-mono2 !text-[13px] normal-case tracking-normal" placeholder="/media/film/poster-….jpg" />
+              <input value={poster} onChange={(e) => setPoster(e.target.value)} className="field mt-1.5 font-mono2 !text-[13px] normal-case tracking-normal" placeholder="https://res.cloudinary.com/…/poster-….jpg" />
             </label>
           )}
           <label className="block text-xs uppercase tracking-[0.18em] text-white/45">
@@ -862,7 +862,7 @@ function PostsManager() {
                 value={draft.cover}
                 onChange={(e) => setDraft({ ...draft, cover: e.target.value })}
                 className="field mt-1.5 font-mono2 !text-[13px] normal-case tracking-normal"
-                placeholder="/media/real/cover-alssm.jpg"
+                placeholder="https://res.cloudinary.com/tt7oyjd1/image/upload/okgs/real/cover-alssm.jpg"
               />
             </label>
             <label className="md:col-span-2 block text-xs uppercase tracking-[0.18em] text-white/45">

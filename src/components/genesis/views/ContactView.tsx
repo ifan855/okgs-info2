@@ -206,7 +206,7 @@ export default function ContactView() {
 
               <Reveal delay={0.25}>
                 <div className="relative overflow-hidden rounded-3xl border border-white/10">
-                  <img src="/media/real/campus-1.jpg" alt="The school building in Kalai" className="h-64 w-full object-cover" loading="lazy" />
+                  <img src="https://res.cloudinary.com/tt7oyjd1/image/upload/okgs/real/campus-1.jpg" alt="The school building in Kalai" className="h-64 w-full object-cover" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-void via-void/20 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-6">
                     <p className="font-display text-lg font-semibold text-ink">See you at the office.</p>

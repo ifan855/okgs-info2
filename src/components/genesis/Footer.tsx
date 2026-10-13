@@ -30,7 +30,7 @@ export default function Footer() {
           {/* brand */}
           <div className="md:col-span-4">
             <div className="flex items-center gap-3">
-              <img src="/media/okgs-logo.png" alt="OKGS crest" className="h-11 w-11 object-contain" />
+              <img src="https://res.cloudinary.com/tt7oyjd1/image/upload/okgs/okgs-logo.png" alt="OKGS crest" className="h-11 w-11 object-contain" />
               <div>
                 <p className="font-display text-base font-bold tracking-wide text-ink md:text-lg">
                   {isFair ? (

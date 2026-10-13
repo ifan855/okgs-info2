@@ -341,7 +341,7 @@ function SchoolHero() {
           className="flex flex-wrap items-center gap-3"
         >
           <span className="chip chip-solid">
-            <img src="/media/real/crest.jpg" alt="" className="h-4 w-4 rounded-full object-cover" />
+            <img src="https://res.cloudinary.com/tt7oyjd1/image/upload/okgs/real/crest.jpg" alt="" className="h-4 w-4 rounded-full object-cover" />
             Since 2003
           </span>
           <span className="chip chip-solid font-bangla hidden md:inline-flex" style={{ letterSpacing: "0.06em" }}>

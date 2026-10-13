@@ -110,7 +110,7 @@ function StoryAndStats() {
           <div className="mt-14 grid gap-5 md:grid-cols-[1.6fr_1fr]">
             <figure className="group relative overflow-hidden rounded-[2rem] border border-white/10">
               <img
-                src="/media/real/campus-1.jpg"
+                src="https://res.cloudinary.com/tt7oyjd1/image/upload/okgs/real/campus-1.jpg"
                 alt="The school corridors at OKGS campus, Kalai"
                 className="h-64 w-full object-cover transition-transform duration-700 group-hover:scale-105 md:h-80"
                 loading="lazy"
@@ -128,7 +128,7 @@ function StoryAndStats() {
                 style={{ background: "radial-gradient(60% 60% at 50% 40%, rgba(217,119,6,0.09), transparent 70%)" }}
               />
               <img
-                src="/media/real/crest.jpg"
+                src="https://res.cloudinary.com/tt7oyjd1/image/upload/okgs/real/crest.jpg"
                 alt="The official OKGS crest"
                 className="relative h-40 w-40 rounded-full object-cover shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)] transition-transform duration-700 group-hover:scale-105"
                 loading="lazy"

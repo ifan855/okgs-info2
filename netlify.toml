@@ -1,0 +1,14 @@
+# Netlify deploy configuration — OKGS info site (Next.js)
+# Media (videos, photos) is hosted on Cloudinary; nothing under public/media
+# is committed, so builds stay light and no media ever reaches GitHub.
+
+[build]
+  command = "npx next build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# The official Next.js runtime handles SSR routes (/api/*) and static assets.
+[[plugins]]
+  package = "@netlify/plugin-nextjs"

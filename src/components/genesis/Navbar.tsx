@@ -50,7 +50,7 @@ export default function Navbar({ route }: { route: string }) {
           {/* logo */}
           <Anchor to="/" className="group relative z-10 flex items-center gap-3 py-1.5 pl-2 pr-3">
             <span className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 ring-1 ring-white/15 transition-all duration-500 group-hover:ring-gold/60">
-              <img src="/media/okgs-logo.png" alt="OKGS crest" className="h-7 w-7 object-contain" />
+              <img src="https://res.cloudinary.com/tt7oyjd1/image/upload/okgs/okgs-logo.png" alt="OKGS crest" className="h-7 w-7 object-contain" />
               <span className="absolute inset-0 rounded-xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" style={{ boxShadow: "0 0 22px rgba(240,180,41,0.35)" }} />
             </span>
             <span className="leading-tight">

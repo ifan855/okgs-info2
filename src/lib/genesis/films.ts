@@ -2,28 +2,28 @@ import type { Film } from "@/lib/types";
 
 /* ============================================================
    THE FILM DESK — real school footage, cut for the web.
-   Ten films live in /media/film (H.264 mp4, faststart):
-   · odyssey-montage      → the FAIR hero's quick-cut opening loop
-                            (billboard → projects → plaques → the
-                            principal's speech → flash mob → the roar)
-   · school-days-montage  → the NORMAL hero's quick-cut loop
-                            (gate → handwriting → art → craft →
-                            puzzle → scouts → courtyard → the field)
-   · gate-morning         → raw morning-gate loop (montage source)
+   Hosted on Cloudinary (cloud tt7oyjd1) — never committed to git.
+   · odyssey-montage-v3    → the FAIR hero's quick-cut opening loop
+                             (billboard → projects → Ayman at the tables →
+                             the principal's speech → flash mob → Ayman → the roar)
+                             Re-cut? upload a -v4 public id and bump these consts.
+   · school-days-montage-v3 → the NORMAL hero's quick-cut loop
+                             (gate → handwriting → art → craft →
+                             puzzle → scouts → courtyard → the field)
    · film-*               → the watchable films below
    Every frame is the school's own footage — no stock anywhere.
    ============================================================ */
 
-export const HERO_MONTAGE = "/media/film/odyssey-montage.mp4";
-export const HERO_MONTAGE_POSTER = "/media/film/poster-odyssey.jpg";
-export const SCHOOL_MONTAGE = "/media/film/school-days-montage.mp4";
-export const SCHOOL_MONTAGE_POSTER = "/media/film/poster-school-days.jpg";
+export const HERO_MONTAGE = "https://res.cloudinary.com/tt7oyjd1/video/upload/okgs/film/odyssey-montage-v3.mp4";
+export const HERO_MONTAGE_POSTER = "https://res.cloudinary.com/tt7oyjd1/image/upload/okgs/film/poster-odyssey.jpg";
+export const SCHOOL_MONTAGE = "https://res.cloudinary.com/tt7oyjd1/video/upload/okgs/film/school-days-montage-v3.mp4";
+export const SCHOOL_MONTAGE_POSTER = "https://res.cloudinary.com/tt7oyjd1/image/upload/okgs/film/poster-school-days.jpg";
 
 export const FILMS: Film[] = [
   {
     id: "odyssey",
-    src: "/media/film/film-odyssey.mp4",
-    poster: "/media/film/poster-film-odyssey.jpg",
+    src: "https://res.cloudinary.com/tt7oyjd1/video/upload/okgs/film/film-odyssey.mp4",
+    poster: "https://res.cloudinary.com/tt7oyjd1/image/upload/okgs/film/poster-film-odyssey.jpg",
     title: "OKGS Odyssey — the 5th Science Fair",
     caption: "The drone opens over Kalai, the crowd takes the field, the plaques line the stage. Nineteen minutes of the fair compressed into two — this is the film the whole campus still quotes.",
     edition: "both",
@@ -32,8 +32,8 @@ export const FILMS: Film[] = [
   },
   {
     id: "scout",
-    src: "/media/film/film-scout.mp4",
-    poster: "/media/film/poster-film-scout.jpg",
+    src: "https://res.cloudinary.com/tt7oyjd1/video/upload/okgs/film/film-scout.mp4",
+    poster: "https://res.cloudinary.com/tt7oyjd1/image/upload/okgs/film/poster-film-scout.jpg",
     title: "Scout display — 26 March",
     caption: "Drums, flags and the parade on the big field for the Independence Day display. The scout troop marches the way it drills — loud and in step.",
     captionBn: "মহান শহীদ ও জাতীয় দিবস ২০২৬ — স্কাউট প্রদর্শনী",
@@ -42,8 +42,8 @@ export const FILMS: Film[] = [
   },
   {
     id: "flashmob",
-    src: "/media/film/film-flashmob.mp4",
-    poster: "/media/film/poster-film-flashmob.jpg",
+    src: "https://res.cloudinary.com/tt7oyjd1/video/upload/okgs/film/film-flashmob.mp4",
+    poster: "https://res.cloudinary.com/tt7oyjd1/image/upload/okgs/film/poster-film-flashmob.jpg",
     title: "Flash mob — ART Odyssey stage",
     caption: "Two performers, one purple stage and a courtyard that stopped to watch. The ART Odyssey flash mob, filmed in one take.",
     edition: "both",
@@ -51,8 +51,8 @@ export const FILMS: Film[] = [
   },
   {
     id: "greeting",
-    src: "/media/film/film-greeting.mp4",
-    poster: "/media/film/poster-film-greeting.jpg",
+    src: "https://res.cloudinary.com/tt7oyjd1/video/upload/okgs/film/film-greeting.mp4",
+    poster: "https://res.cloudinary.com/tt7oyjd1/image/upload/okgs/film/poster-film-greeting.jpg",
     title: "A simple greeting, a warm smile",
     caption: "The gate opens, the line forms, and the morning greeting round begins — the smallest habit on the timetable and the one that sets the whole day.",
     edition: "normal",
@@ -60,8 +60,8 @@ export const FILMS: Film[] = [
   },
   {
     id: "handwriting",
-    src: "/media/film/film-handwriting.mp4",
-    poster: "/media/film/poster-film-handwriting.jpg",
+    src: "https://res.cloudinary.com/tt7oyjd1/video/upload/okgs/film/film-handwriting.mp4",
+    poster: "https://res.cloudinary.com/tt7oyjd1/image/upload/okgs/film/poster-film-handwriting.jpg",
     title: "The handwriting class",
     caption: "Sundor hater lekha — the special handwriting hour, pencil grip by pencil grip.",
     captionBn: "সুন্দর হাতের লেখার বিশেষ ক্লাস",
@@ -70,8 +70,8 @@ export const FILMS: Film[] = [
   },
   {
     id: "craft",
-    src: "/media/film/film-craft.mp4",
-    poster: "/media/film/poster-film-craft.jpg",
+    src: "https://res.cloudinary.com/tt7oyjd1/video/upload/okgs/film/film-craft.mp4",
+    poster: "https://res.cloudinary.com/tt7oyjd1/image/upload/okgs/film/poster-film-craft.jpg",
     title: "Making things with glue and paper",
     caption: "Kle diye bivinno jinish toiri — the craft period, where the classroom turns into a workshop.",
     captionBn: "ক্লে দিয়ে বিভিন্ন ধরনের জিনিস তৈরি",
@@ -80,8 +80,8 @@ export const FILMS: Film[] = [
   },
   {
     id: "art",
-    src: "/media/film/film-art.mp4",
-    poster: "/media/film/poster-film-art.jpg",
+    src: "https://res.cloudinary.com/tt7oyjd1/video/upload/okgs/film/film-art.mp4",
+    poster: "https://res.cloudinary.com/tt7oyjd1/image/upload/okgs/film/poster-film-art.jpg",
     title: "Wall painting — the art period",
     caption: "Red boards, orange boards, brushes too big for small hands — the art class paints the corridor bright.",
     edition: "normal",
@@ -89,8 +89,8 @@ export const FILMS: Film[] = [
   },
   {
     id: "puzzle",
-    src: "/media/film/film-puzzle.mp4",
-    poster: "/media/film/poster-film-puzzle.jpg",
+    src: "https://res.cloudinary.com/tt7oyjd1/video/upload/okgs/film/film-puzzle.mp4",
+    poster: "https://res.cloudinary.com/tt7oyjd1/image/upload/okgs/film/poster-film-puzzle.jpg",
     title: "The puzzle hour",
     caption: "Class two versus a floor puzzle — logic, teamwork and one triumphant final piece.",
     edition: "normal",

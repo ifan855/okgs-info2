@@ -74,6 +74,34 @@ No extra dependency is required — the adapter speaks Neon's **serverless HTTP 
 protocol with a plain `fetch`. Tables (`posts`, `settings`, `submissions`, `gallery`,
 `kv`) are created and seeded automatically on first request.
 
+## ✦ Media hosting — Cloudinary (never in git)
+
+All photos and videos (both hero montages, the eight films, the real campus
+photography, club banners/logos, the crest and the school logo) live on
+**Cloudinary** and are referenced by URL from the frontend. **No media file is ever
+committed to GitHub** — `public/media/` is fully git-ignored.
+
+- Cloud: `tt7oyjd1`
+- Scheme: `okgs/film/*` (films, posters, hero montages), `okgs/real/*` (photos,
+  banners, logos), `okgs/okgs-logo`
+- The two hero montages carry a **version suffix in the public id**
+  (`odyssey-montage-v3`, `school-days-montage-v3`) so a re-cut can never be masked
+  by a stale browser or CDN cache — re-render, upload as `-v4`, bump
+  `HERO_MONTAGE` / `SCHOOL_MONTAGE` in `src/lib/genesis/films.ts`.
+- API credentials stay out of the repo (see `.env.example`).
+
+## ✦ Deploying to Netlify
+
+The repo is Netlify-ready (`netlify.toml` included):
+
+1. Push this repo to GitHub and "Add new site → Import an existing project" on Netlify.
+2. Build settings come from `netlify.toml` (`npx next build`, publish `.next`,
+   `@netlify/plugin-nextjs` runtime for the API routes).
+3. Optional environment variables (Site configuration → Environment variables):
+   `NEON_DATABASE_URL` for the real database, `ADMIN_KEY` to override the seed
+   studio password. Without them the site runs on the seeded mock backend.
+4. Deploy. No media upload step — the site pulls everything from Cloudinary.
+
 ## ✦ Admin access & the studio password
 
 - The studio password is stored **in the database as a sha-256 hash** (`kv.admin_hash`)
@@ -119,8 +147,8 @@ src/
 public/
   fonts/                     # self-hosted: Space Grotesk, Inter, Space Mono,
                              # Newsreader, Noto Sans Bengali
-  media/real/                # REAL school photography (campus, crest, club banners,
-                             # logos, branding mark) — the only images used
+  media/                     # git-ignored — media lives on Cloudinary
+                             # (film desk videos, posters, real campus photography)
 ```
 
 ## ✦ Content sources

@@ -22,6 +22,7 @@ server.log
 /download
 /upload
 /scripts
+/site
 /tests
 /tool-results
 /examples
@@ -39,6 +40,9 @@ server.log
 /prompt
 /local-*
 /test
+
+# media lives on Cloudinary (cloud tt7oyjd1) — NEVER commit media files
+/public/media/
 
 # misc
 .DS_Store
