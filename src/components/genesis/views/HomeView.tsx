@@ -4,7 +4,7 @@
    One address, two editions, each opening on its own montage:
 
    fair   → a cinematic, low-density title-card hero — the school's
-            own Odyssey footage cut into a quick-cut montage (fair
+            own Odyssey footage cut into a slow-cut montage (fair
             billboard, project tables, plaques, the principal's
             speech, the speakers, the roar) behind the fair's full
             colon-combined name — then chapters that let information
@@ -116,7 +116,7 @@ function CategoryChip({ post }: { post: Post }) {
 
 /* ============================================================
    FAIR HERO — the school's own Odyssey footage, cut into a
-   quick-cut montage (drone reveal → projects → confetti →
+   slow-cut montage (drone reveal → projects → confetti →
    trophies → the roar of the crowd), behind one screen of type.
    Scrims run LOW-transparency: real contrast, no wash.
    ============================================================ */

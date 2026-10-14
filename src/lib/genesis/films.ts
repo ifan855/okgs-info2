@@ -3,19 +3,19 @@ import type { Film } from "@/lib/types";
 /* ============================================================
    THE FILM DESK — real school footage, cut for the web.
    Hosted on Cloudinary (cloud tt7oyjd1) — never committed to git.
-   · odyssey-montage-v5      → the FAIR hero's quick-cut opening
+   · odyssey-montage-v6      → the FAIR hero's slow-cut opening
                               loop (aerial → billboard → gate → a
                               project → the stalls → THE PRIZE
-                              SHOWCASE, held long like the original
-                              sequence: unveiling + confetti → the
-                              crowd → prize giving → trophies → the
-                              winners → a 16-frame dissolve into the
-                              principal's FULL 0:26 take → the
-                              speakers → the roar → the drone, out)
+                              SHOWCASE, unhurried: unveiling +
+                              confetti → the crowd → prize giving →
+                              trophies → the winners → a long
+                              dissolve into the principal's FULL
+                              0:26 take, breathing → the speaker →
+                              the roar → the drone, out)
                               — no flash mob, no Ayman Sadiq; his
                               only home is the normal cut.
-                              Re-cut? upload a -v6 public id and bump these consts.
-   · school-days-montage-v5  → the NORMAL hero's quick-cut loop
+                              Re-cut? upload a -v7 public id and bump these consts.
+   · school-days-montage-v6  → the NORMAL hero's slow-cut loop
                               (the school drone gliding, smooth →
                               corridor line → handwriting → art →
                               craft → puzzle → scouts → the flash
@@ -28,10 +28,10 @@ import type { Film } from "@/lib/types";
    Every frame is the school's own footage — no stock anywhere.
    ============================================================ */
 
-export const HERO_MONTAGE = "https://res.cloudinary.com/tt7oyjd1/video/upload/okgs/film/odyssey-montage-v5.mp4";
-export const HERO_MONTAGE_POSTER = "https://res.cloudinary.com/tt7oyjd1/image/upload/okgs/film/poster-odyssey-v5.jpg";
-export const SCHOOL_MONTAGE = "https://res.cloudinary.com/tt7oyjd1/video/upload/okgs/film/school-days-montage-v5.mp4";
-export const SCHOOL_MONTAGE_POSTER = "https://res.cloudinary.com/tt7oyjd1/image/upload/okgs/film/poster-school-days-v5.jpg";
+export const HERO_MONTAGE = "https://res.cloudinary.com/tt7oyjd1/video/upload/okgs/film/odyssey-montage-v6.mp4";
+export const HERO_MONTAGE_POSTER = "https://res.cloudinary.com/tt7oyjd1/image/upload/okgs/film/poster-odyssey-v6.jpg";
+export const SCHOOL_MONTAGE = "https://res.cloudinary.com/tt7oyjd1/video/upload/okgs/film/school-days-montage-v6.mp4";
+export const SCHOOL_MONTAGE_POSTER = "https://res.cloudinary.com/tt7oyjd1/image/upload/okgs/film/poster-school-days-v6.jpg";
 
 export const FILMS: Film[] = [
   {
