@@ -4,16 +4,16 @@
    One address, two editions, each opening on its own montage:
 
    fair   → a cinematic, low-density title-card hero — the school's
-            own Odyssey footage cut into a slow-cut montage (fair
-            billboard, project tables, plaques, the principal's
-            speech, the speakers, the roar) behind the fair's full
-            colon-combined name — then chapters that let information
-            density climb with every scroll: the crew of
+            own Odyssey footage, every cut verified against the
+            source (fair billboard, project tables, plaques, the
+            principal's speech, the speakers, the roar) behind the
+            fair's full colon-combined name — then chapters that let
+            information density climb with every scroll: the crew of
             five, the film desk, campus moments, the journal, finale.
    normal → the same cinematic opening, cut from everyday school
             life (the school drone gliding → corridor → handwriting
-            → art → craft → puzzle → scouts → the flash mob → one
-            guest beat → the drone pulling away) behind one promise
+            → art → craft → puzzle → scouts → one held guest beat →
+            the drone glide returning, fading away) behind one promise
             — then snapshot, facilities, clubs, the film desk, campus
             life, journal.
 
@@ -115,9 +115,9 @@ function CategoryChip({ post }: { post: Post }) {
 }
 
 /* ============================================================
-   FAIR HERO — the school's own Odyssey footage, cut into a
-   slow-cut montage (drone reveal → projects → confetti →
-   trophies → the roar of the crowd), behind one screen of type.
+   FAIR HERO — the school's own Odyssey footage, cleanly cut
+   (drone reveal → projects → the showcase → the roar of the
+   crowd), behind one screen of type.
    Scrims run LOW-transparency: real contrast, no wash.
    ============================================================ */
 function FairHero() {
