@@ -3,27 +3,35 @@ import type { Film } from "@/lib/types";
 /* ============================================================
    THE FILM DESK — real school footage, cut for the web.
    Hosted on Cloudinary (cloud tt7oyjd1) — never committed to git.
-   · odyssey-montage-v4    → the FAIR hero's quick-cut opening loop
-                             (billboard → projects → the guests at the
-                             stalls → prize plaques · dissolve · the
-                             principal's speech → the speakers → the roar)
-                             — no flash mob, no stage bits; the plaques
-                             hand over to the principal on a 16-frame
-                             dissolve and his 0:26 take is the full one.
-                             Re-cut? upload a -v5 public id and bump these consts.
-   · school-days-montage-v4 → the NORMAL hero's quick-cut loop
-                             (gate → handwriting → art → craft →
-                             puzzle → scouts → the flash mob, breathing
-                             on dissolves → the roar pushing in → a
-                             motion-matched dissolve into the drone)
-   · film-*               → the watchable films below
+   · odyssey-montage-v5      → the FAIR hero's quick-cut opening
+                              loop (aerial → billboard → gate → a
+                              project → the stalls → THE PRIZE
+                              SHOWCASE, held long like the original
+                              sequence: unveiling + confetti → the
+                              crowd → prize giving → trophies → the
+                              winners → a 16-frame dissolve into the
+                              principal's FULL 0:26 take → the
+                              speakers → the roar → the drone, out)
+                              — no flash mob, no Ayman Sadiq; his
+                              only home is the normal cut.
+                              Re-cut? upload a -v6 public id and bump these consts.
+   · school-days-montage-v5  → the NORMAL hero's quick-cut loop
+                              (the school drone gliding, smooth →
+                              corridor line → handwriting → art →
+                              craft → puzzle → scouts → the flash
+                              mob on a long breathing cut → ONE
+                              good Ayman Sadiq beat, arrival →
+                              stage → the drone pulling back wide,
+                              FADING away — never the opening scene
+                              again, and no crowd-roar scene)
+   · film-*                 → the watchable films below
    Every frame is the school's own footage — no stock anywhere.
    ============================================================ */
 
-export const HERO_MONTAGE = "https://res.cloudinary.com/tt7oyjd1/video/upload/okgs/film/odyssey-montage-v4.mp4";
-export const HERO_MONTAGE_POSTER = "https://res.cloudinary.com/tt7oyjd1/image/upload/okgs/film/poster-odyssey-v4.jpg";
-export const SCHOOL_MONTAGE = "https://res.cloudinary.com/tt7oyjd1/video/upload/okgs/film/school-days-montage-v4.mp4";
-export const SCHOOL_MONTAGE_POSTER = "https://res.cloudinary.com/tt7oyjd1/image/upload/okgs/film/poster-school-days-v4.jpg";
+export const HERO_MONTAGE = "https://res.cloudinary.com/tt7oyjd1/video/upload/okgs/film/odyssey-montage-v5.mp4";
+export const HERO_MONTAGE_POSTER = "https://res.cloudinary.com/tt7oyjd1/image/upload/okgs/film/poster-odyssey-v5.jpg";
+export const SCHOOL_MONTAGE = "https://res.cloudinary.com/tt7oyjd1/video/upload/okgs/film/school-days-montage-v5.mp4";
+export const SCHOOL_MONTAGE_POSTER = "https://res.cloudinary.com/tt7oyjd1/image/upload/okgs/film/poster-school-days-v5.jpg";
 
 export const FILMS: Film[] = [
   {

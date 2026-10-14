@@ -8,12 +8,14 @@
             billboard, project tables, plaques, the principal's
             speech, the speakers, the roar) behind the fair's full
             colon-combined name — then chapters that let information
-            density climb with every scroll: arenas, the crew of
+            density climb with every scroll: the crew of
             five, the film desk, campus moments, the journal, finale.
    normal → the same cinematic opening, cut from everyday school
-            life (gate → handwriting → art → craft → puzzle →
-            scouts → courtyard) behind one promise — then snapshot,
-            facilities, clubs, the film desk, campus life, journal.
+            life (the school drone gliding → corridor → handwriting
+            → art → craft → puzzle → scouts → the flash mob → one
+            guest beat → the drone pulling away) behind one promise
+            — then snapshot, facilities, clubs, the film desk, campus
+            life, journal.
 
    No stock space photography anywhere: every backdrop is real
    school footage or CSS light; every photo is real. */
@@ -24,7 +26,7 @@ import {
   ArrowRight, ArrowUpRight, MapPin, CalendarDays, TicketCheck, Clock,
   ChevronDown, Phone, ExternalLink, LogIn, ImageOff, Clapperboard,
 } from "lucide-react";
-import { FAIR, ARENAS, CLUBS, STATS, SITE, FACILITIES } from "@/lib/genesis/data";
+import { FAIR, CLUBS, STATS, SITE, FACILITIES } from "@/lib/genesis/data";
 import { HERO_MONTAGE, HERO_MONTAGE_POSTER, SCHOOL_MONTAGE, SCHOOL_MONTAGE_POSTER, filmsForEdition } from "@/lib/genesis/films";
 import { useMode, fetchPosts, fetchGallery, formatDate } from "@/lib/press";
 import type { GalleryItem, Film, Post } from "@/lib/types";
@@ -41,7 +43,6 @@ export default function HomeView() {
       {isFair ? <FairHero /> : <SchoolHero />}
       {isFair ? (
         <>
-          <ArenaChapter />
           <CrewChapter />
           <FilmsChapter onOpen={setOpenFilm} />
           <MomentsChapter />
@@ -492,57 +493,6 @@ function FilmsChapter({ onOpen }: { onOpen: (f: Film) => void }) {
             ))}
           </div>
         )}
-      </div>
-    </section>
-  );
-}
-
-/* ============================================================
-   FAIR · ARENAS — density climbs: full programme rows
-   ============================================================ */
-function ArenaChapter() {
-  return (
-    <section className="relative z-10 nebula grain py-24 md:py-32">
-      <div className="mx-auto max-w-7xl px-5 md:px-10">
-        <div className="flex flex-wrap items-end justify-between gap-6">
-          <SectionHead
-            eyebrow="The fair in brief"
-            title="Seven arenas, two days"
-            sub="Working models, robots, buzzer finals, a live pitch, a debate floor, a gallery of posters and a code lab — every arena judged on published criteria."
-          />
-          <Reveal delay={0.25}>
-            <Anchor to="/genesis" className="btn-ghost !py-3">
-              Full programme <ArrowRight className="h-4 w-4" aria-hidden />
-            </Anchor>
-          </Reveal>
-        </div>
-
-        <div className="mt-14 overflow-hidden rounded-[2rem] border border-white/10">
-          {ARENAS.map((a, i) => (
-            <Reveal key={a.id} delay={0.04 * i} y={18}>
-              <Anchor
-                to={`/genesis#${a.id}`}
-                className={`group relative flex items-center gap-5 px-6 py-5 transition-colors duration-300 hover:bg-white/[0.04] md:gap-8 md:px-8 md:py-6 ${i > 0 ? "border-t border-white/8" : ""}`}
-              >
-                <span className="glass flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-gold-2 transition-transform duration-500 group-hover:scale-110">
-                  <IconFor name={a.icon} className="h-5 w-5" />
-                </span>
-                <span className="min-w-0 flex-1">
-                  <span className="font-display block text-base font-semibold text-ink transition-colors group-hover:text-gold-2 md:text-lg">
-                    {a.name}
-                  </span>
-                  <span className="mt-0.5 hidden truncate text-[13px] text-dim md:block">{a.desc}</span>
-                </span>
-                <span className="hidden shrink-0 text-right text-[11px] leading-relaxed text-white/45 lg:block">
-                  {a.classes.split("·")[0]}
-                  <br />
-                  {a.venue}
-                </span>
-                <ArrowUpRight className="h-4 w-4 shrink-0 text-white/25 transition-all duration-300 group-hover:translate-x-0.5 group-hover:text-gold-2" aria-hidden />
-              </Anchor>
-            </Reveal>
-          ))}
-        </div>
       </div>
     </section>
   );

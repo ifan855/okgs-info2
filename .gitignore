@@ -52,3 +52,4 @@ server.log
 
 # media workbench — never commit media
 /media-work
+/work
